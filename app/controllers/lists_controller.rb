@@ -3,6 +3,7 @@ class ListsController < ApplicationController
   def index
     @movies = Movie.all
     @lists = List.all
+    @bookmarks = Bookmark.all
   end
 
   def show
@@ -27,6 +28,6 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 end
