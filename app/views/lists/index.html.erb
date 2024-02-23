@@ -1,7 +1,14 @@
-<h1>My Lists</h1>
+<div class="container">
+  <div class="row mt-5">
+    <h1>My Lists</h1>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+    <% @lists.each do |list| %>
+    <div class="col-4 mb-3">
+      <div class="card" style="width: 18rem">
+        <%= image_tag("banner")%>
+        <div class="card-body"><%= link_to list.name, list_path(list) %></div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
